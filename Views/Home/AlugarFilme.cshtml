@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "AlugarFilme";
+}
+
+<h2>Aluguel de Filme</h2>
+
+@{
+    ViewBag.Title = "BuscarAtualizar";
+}
+<h2>Buscar e Atualizar o Cliente</h2>
+
+@using (Html.BeginForm("AlugarFilme", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table>
+
+        <tr><td>Código:</td><td><input type="text" name="txtCod" id="txtCod" value="@ViewBag.cod" /></td></tr>
+        
+
+        <tr><td>Nome do Filme:</td><td><input type="text" name="txtNome" id="txtNome" value="@ViewBag.nome" /></td></tr>
+
+
+        <tr><td>Status:</td><td><input type="text" name="txtStatus" id="txtStatus" value="@ViewBag.status" /></td></tr>
+
+
+        <tr><td colspan="4"><input type="submit" value="Buscar" name="btn" id="btn" /></td></tr>
+
+
+        <tr><td colspan="2"><input type="submit" value="Atualizar" name="btn" id="btn" /></td></tr>
+
+    </table>
+
+    <p>@Html.ActionLink("Voltar", "Index", "Home")</p>
+
+}
